@@ -17,10 +17,9 @@ class String
   def hash
     new_arr = []
     self.each_char.with_index do |ele, i|
-      # new_arr << alphabet.index(ele)
-      new_arr << ele.ord
+      new_arr << ele.ord.hash % i.hash
     end
-    new_arr.sum % new_arr.last
+    new_arr.sum.hash
   end
 end
 
